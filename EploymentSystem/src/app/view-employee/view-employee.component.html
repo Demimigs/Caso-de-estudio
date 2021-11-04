@@ -1,0 +1,246 @@
+<div class="container card mt-5">
+
+    <div class="mt-5">
+      <h4>Employee Profile</h4>
+
+    <form #employeeForm="ngForm" (ngSubmit)="updateEmployeeData(employeeForm.value)">
+
+      <div class="container mt-3 mb-3">
+
+        <div class="row">
+          <div class="col-4">
+            <span><b>ID</b></span>
+            <input class="form-control" disabled type="text" value="{{ employeeData.id }}"/>
+            <input type="hidden" name="id" ngModel="{{ employeeData.id }}" />
+          </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+          <div class="mb-3 mt-3">
+            <span><b>Name</b></span>
+            <input class="form-control" type="text" name="firstName" ngModel="{{ employeeData.firstName }}"/>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <span><b>Middle name</b></span>
+            <input class="form-control" type="text" name="middleName" ngModel="{{ employeeData.middleName }}"/>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <span><b>Last name</b></span>
+            <input class="form-control" type="text" name="lastName" ngModel="{{ employeeData.lastName }}"/>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <span><b>Position</b></span>
+            <input class="form-control" type="text" name="position" ngModel="{{ employeeData.position }}"/>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <span><b>Birth Date</b></span>
+            <input class="form-control" type="date" name="birthDate" ngModel="{{ employeeData.birthDate }}"/>
+          </div>
+
+          <input type="hidden" name="compesationList" ngModel="{{ employeeData.compesationList }}"/>
+
+          <div class="col-2">
+            <br />
+            <button type="submit" class="btn btn-primary">Update data</button>
+          </div>
+
+        </div>
+
+        <br />
+
+        <div class="alert alert-dark" *ngIf="display" [class.bg-info]="display">
+          {{ message }}
+        </div>
+
+      </div>
+
+    </form>
+
+    <br /><br />
+
+    <div class="container">
+
+      <div class="d-flex justify-content-between">
+        <h3>compesations</h3>
+        <a type="button" class="btn btn-primary" (click)="showNewcompesation()">New compesation</a>
+      </div>
+  
+      <div class="container" *ngIf="displaycompesation">
+
+        <form #compesationForm="ngForm" (ngSubmit)="updatecompesationData(compesationForm.value)">
+
+          <br />
+
+          <h4>New compesation</h4>
+
+          <div class="row">
+            <div class="mb-3 mt-3">
+              <span>Type</span>
+              <select class="form-control" name="type" ngModel="Salary">
+                <option value="Salary">Salary</option>
+                <option value="Bonus">Bonus</option>
+                <option value="Commission">Commission</option>
+                <option value="Allowance">Allowance</option>
+                <option value="Adjustment">Adjustment</option>
+              </select>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <span>Month</span>
+              <select class="form-control" name="month" ngModel="1">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">Aril</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <span>Year</span>
+              <input class="form-control" type="number" placeholder="Year (YYYY)" min="2000" max="2050" name="year" ngModel="2021"/>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <span>Description</span>
+              <input type="text" class="form-control" placeholder="compesation description" name="description" ngModel/>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <span>Amount</span>
+              <input type="number" class="form-control" placeholder="Amount" name="amount" ngModel/>
+            </div>
+
+          </div>
+
+          <br />
+
+          <button type="submit" class="btn btn-primary">Add compesation</button>
+
+          <br /><br />
+
+          <div class="bg-info text-light" *ngIf="messagecompesation">
+            {{ messageError }}
+          </div>
+
+        </form>
+
+      </div>
+  
+      <div class="container" *ngIf="displaycompesationEdit">
+
+        <form #compesationEditForm="ngForm" (ngSubmit)="editcompesationData(compesationEditForm.value)">
+
+          <br />
+
+          <h4>compesation</h4>
+
+          <div class="row">
+            <input type="hidden" name="id" ngModel="{{ id }}" />
+            <div class="container mt-3">
+              <span>Type</span>
+              <select class="form-control" name="type" ngModel="{{ type }}" disabled>
+                <option value="Salary">Salary</option>
+                <option value="Bonus">Bonus</option>
+                <option value="Commission">Commission</option>
+                <option value="Allowance">Allowance</option>
+                <option value="Adjustment">Adjustment</option>
+              </select>
+            </div>
+
+            <div class="container mt-3">
+              <span>Month</span>
+              <select class="form-control" name="month" ngModel="{{ month }}" disabled>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">Aril</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+
+            <div class="container mt-3">
+              <span>Year</span>
+              <input class="form-control" type="number" placeholder="Year (YYYY)" min="2000" max="2050" name="year" ngModel="{{ year }}" disabled/>
+            </div>
+
+            <div class="container mt-3">
+              <span>Description</span>
+              <input type="text" class="form-control" placeholder="compesation description" name="description" ngModel="{{ description }}"/>
+            </div>
+
+            <div class="container mt-3">
+              <span>Amount</span>
+              <input type="number" class="form-control" placeholder="Amount" name="amount" ngModel="{{ amount }}"/>
+            </div>
+
+          </div>
+
+          <br />
+
+          <button type="submit" class="btn btn-primary">Edit</button>
+
+
+          <br /><br />
+
+          <div class="bg-info text-light" *ngIf="messagecompesation">
+            {{ messageError }}
+          </div>
+
+        </form>
+
+      </div>
+  
+      <br />
+
+      <table class="table">
+
+        <thead class="table table-light">
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Month</th>
+            <th scope="col">Year</th>
+            <th scope="col">Description</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let compesation of employeeData.compesationList; let i = index" [attr.data-index]="i">
+            <th>{{ compesation.type }}</th>
+            <th>{{ setMonth(compesation.month) }}</th>
+            <td>{{ compesation.year }}</td>
+            <td>{{ compesation.description }}</td>
+            <td>$ {{ compesation.amount }}</td>
+            <td><button class="btn btn-secondary" (click)="edit(i)">Edit</button></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>

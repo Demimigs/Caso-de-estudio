@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+
+      <form class="d-flex" >
+        <input class="form-control" type="text" placeholder="First name" (input)="onChangeFirstName($event)" value="{{ employeeFirstName }}"/>
+        <input class="form-control" type="text" placeholder="Last name" (input)="onChangeLastName($event)" value="{{ employeeLastName }}"/>
+        <input class="form-control" type="text" placeholder="Position" (input)="onChangePosition($event)" value="{{ employeePosition }}"/>
+        <button class="btn btn-primary" (click)="onClickSubmit()">Search</button>
+        <button class="btn btn-primary" (click)="onClickClear()">Clear</button>
+      </form>
+      
+    </div>
+
+  </div>
+
+</nav>

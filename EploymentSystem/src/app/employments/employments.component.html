@@ -1,0 +1,36 @@
+<app-search></app-search>
+
+<div class="container card mt-5"> 
+
+  <h4>Employees</h4> 
+
+  <table class="table table-light">
+
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Birth date</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <tr *ngFor="let employee of employees">
+
+        <th scope="row">{{ employee.id }}</th>
+
+        <th> {{ employee.firstName }} {{ employee.middleName }} {{ employee.lastName }}</th>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.birthDate }}</td>
+          <td><a routerLink="/employee/{{ employee.id }}">View</a></td>
+          
+      </tr>
+    </tbody>
+
+  </table>
+  
+</div>
+      
