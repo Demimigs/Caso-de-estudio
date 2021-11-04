@@ -113,7 +113,7 @@ export class compesationsComponent implements OnInit {
 
   saveUserCompesation(data: Employee) {
     return this.http.post(
-      'http://localhost:8080/api/update-employee-compesation',
+      'http://localhost:8080/api/update-employee-compensation',
       data
     );
   }

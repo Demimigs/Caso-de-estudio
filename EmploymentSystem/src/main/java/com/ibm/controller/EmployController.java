@@ -26,7 +26,7 @@ public class EmployController {
 
 	@GetMapping("/hello")
 	public String helloMessage() {
-		return "Hello";
+		return "Hello world";
 	}
 
 	@PostMapping("/create-employee")
@@ -39,12 +39,12 @@ public class EmployController {
 		return employeeService.updateEmployee(employee);
 	}
 	
-	@PostMapping("/update-employee-compesation")
+	@PostMapping("/update-employee-compensation")
 	public HashMap<String, Object> updateEmployeeCompesation(@RequestBody Employee employee) {
 		return employeeService.updateEmployeeCompesation(employee);
 	}
 	
-	@GetMapping("/get-employee/{id}")
+	@GetMapping("/getEmployee/{id}")
 	public Employee getEmployeeById(@PathVariable String id) {
 		return employeeService.getEmployeeById(id);
 	}
@@ -63,9 +63,9 @@ public class EmployController {
 	@PostMapping("/check-if-exists")
 	public String checkIfExists(@RequestBody Employee employee) {
 		if(employeeService.getByAllFields(employee).size() > 0) {
-			return "Si hay";
+			return "Yes";
 		}
-		return "No hay";
+		return "No";
 	}
 
 }

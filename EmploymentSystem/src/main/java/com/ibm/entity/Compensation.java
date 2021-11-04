@@ -4,15 +4,15 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Compensation {
 
-	@Field(name = "compesation_type")
+	@Field(name = "compesationtype")
 	private String type;
-	@Field(name = "compesation_amount")
+	@Field(name = "compesationamount")
 	private double amount;
-	@Field(name = "compesation_description")
+	@Field(name = "compesationdescription")
 	private String description;
-	@Field(name = "compesation_year")
+	@Field(name = "compesationyear")
 	private int year;
-	@Field(name = "compesation_month")
+	@Field(name = "compesationmonth")
 	private int month;
 
 	public String getType() {

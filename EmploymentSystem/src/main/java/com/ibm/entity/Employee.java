@@ -10,16 +10,16 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Employee {
 	@Id
 	private String id;
-	@Field(name = "first_name")
+	@Field(name = "firstname")
 	private String firstName;
-	@Field(name = "middle_name")
+	@Field(name = "middlename")
 	private String middleName;
-	@Field(name = "last_name")
+	@Field(name = "lastname")
 	private String lastName;
-	@Field(name = "birth_date")
+	@Field(name = "birthdate")
 	private String birthDate;
 	private String position;
-	@Field(name = "compesation_list")
+	@Field(name = "compesationlist")
 	private List<Compensation> compesationList;
 
 	public String getId() {
