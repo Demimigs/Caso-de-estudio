@@ -37,14 +37,14 @@ export class EmploymentsComponent implements OnInit {
 
 
   private fetchEmployees() {
-    this.http.get('http://localhost:8080/api/get-all-employees').subscribe((employees) => {
+    this.http.get('http://localhost:8080/apis/get-all-employees').subscribe((employees) => {
         this.employees = employees;
         if (this.employees.length > 0) this.employeesNoExists = false;
       });
   }
 
   private fetchByFilter() {
-    this.http.get(`http://localhost:8080/api/search-employees?firstName=${this.name}&lastName=${this.last}&position=${this.position}`
+    this.http.get(`http://localhost:8080/apis/search-employees?firstName=${this.name}&lastName=${this.last}&position=${this.position}`
       ).subscribe((employees) => {
         this.employees = employees;
         if (this.employees.length > 0) this.employeesNoExists = false;

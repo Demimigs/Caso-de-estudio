@@ -18,7 +18,7 @@ import com.ibm.entity.Employee;
 import com.ibm.service.EmployService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/apis")
 public class EmployController {
 
 	@Autowired
@@ -44,7 +44,7 @@ public class EmployController {
 		return employeeService.updateEmployeeCompesation(employee);
 	}
 	
-	@GetMapping("/getEmployee/{id}")
+	@GetMapping("/get-employee/{id}")
 	public Employee getEmployeeById(@PathVariable String id) {
 		return employeeService.getEmployeeById(id);
 	}

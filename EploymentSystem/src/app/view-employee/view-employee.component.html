@@ -47,7 +47,7 @@
 
           <div class="col-2">
             <br />
-            <button type="submit" class="btn btn-primary">Update data</button>
+            <button type="submit" class="btn btn-primary">Update</button>
           </div>
 
         </div>
@@ -67,8 +67,8 @@
     <div class="container">
 
       <div class="d-flex justify-content-between">
-        <h3>compesations</h3>
-        <a type="button" class="btn btn-primary" (click)="showNewcompesation()">New compesation</a>
+        <h3>Compensations</h3>
+        <a type="button" class="btn btn-primary" (click)="showNewcompesation()">Create new compesation</a>
       </div>
   
       <div class="container" *ngIf="displaycompesation">
@@ -97,7 +97,7 @@
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
-                <option value="4">Aril</option>
+                <option value="4">April</option>
                 <option value="5">May</option>
                 <option value="6">June</option>
                 <option value="7">July</option>
@@ -146,7 +146,7 @@
 
           <br />
 
-          <h4>compesation</h4>
+          <h4>Compensation</h4>
 
           <div class="row">
             <input type="hidden" name="id" ngModel="{{ id }}" />
@@ -167,7 +167,7 @@
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
-                <option value="4">Aril</option>
+                <option value="4">April</option>
                 <option value="5">May</option>
                 <option value="6">June</option>
                 <option value="7">July</option>
@@ -222,7 +222,6 @@
             <th scope="col">Year</th>
             <th scope="col">Description</th>
             <th scope="col">Amount</th>
-            <th scope="col">Options</th>
           </tr>
         </thead>
 
@@ -234,7 +233,6 @@
             <td>{{ compesation.year }}</td>
             <td>{{ compesation.description }}</td>
             <td>$ {{ compesation.amount }}</td>
-            <td><button class="btn btn-secondary" (click)="edit(i)">Edit</button></td>
           </tr>
 
         </tbody>

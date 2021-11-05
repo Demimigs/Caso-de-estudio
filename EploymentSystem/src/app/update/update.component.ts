@@ -23,7 +23,7 @@ export class UpdateComponent implements OnInit {
 
 private fetchEmployee() {
     this.http
-      .get(`http://localhost:8080/api/get-employee/${this.employeeID}`)
+      .get(`http://localhost:8080/apis/get-employee/${this.employeeID}`)
       .subscribe((employee) => {
         this.employeeData = employee;
         this.employeeData.compesationList!.sort((a, b) => {
@@ -34,6 +34,8 @@ private fetchEmployee() {
         });
       });
   }
+
+
 
   updateEmployeeData(data: Employee) {
     this.message = '';
@@ -65,6 +67,8 @@ private fetchEmployee() {
     }
   }
 
+
+
   checkDate(date: Date) {
     var today = new Date();
     var selected = new Date(date);
@@ -72,7 +76,8 @@ private fetchEmployee() {
     return false;
   }
 
+
   saveUser(data: Employee) {
-    return this.http.post('http://localhost:8080/api/update-employee', data);
+    return this.http.post('http://localhost:8080/apis/update-employee', data);
   }
 }

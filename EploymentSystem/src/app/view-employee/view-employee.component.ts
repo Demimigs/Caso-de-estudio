@@ -40,7 +40,7 @@ export class ViewEmployeeComponent implements OnInit {
 
   private fetchEmployee() {
     this.http
-      .get(`http://localhost:8080/api/get-employee/${this.employeeID}`)
+      .get(`http://localhost:8080/apis/get-employee/${this.employeeID}`)
       .subscribe((employee) => {
         this.employeeData = employee;
         this.employeeData.compesationList!.sort((a, b) => {
@@ -127,12 +127,12 @@ export class ViewEmployeeComponent implements OnInit {
   }
 
   saveUser(data: Employee) {
-    return this.http.post('http://localhost:8080/api/update-employee', data);
+    return this.http.post('http://localhost:8080/apis/update-employee', data);
   }
 
   saveUsercompesation(data: Employee) {
     return this.http.post(
-      'http://localhost:8080/api/update-employee-compesation',
+      'http://localhost:8080/apis/update-employee-compesation',
       data
     );
   }

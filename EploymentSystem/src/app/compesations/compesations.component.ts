@@ -113,12 +113,12 @@ export class compesationsComponent implements OnInit {
 
   saveUserCompesation(data: Employee) {
     return this.http.post(
-      'http://localhost:8080/api/update-employee-compensation',
+      'http://localhost:8080/apis/update-employee-compensation',
       data
     );
   }
 
-  private fetchEmployee() {this.http.get(`http://localhost:8080/api/get-employee/${this.employeeID}`).subscribe((employee) => {
+  private fetchEmployee() {this.http.get(`http://localhost:8080/apis/get-employee/${this.employeeID}`).subscribe((employee) => {
         this.employeeData = employee;
         this.employeeData.compesationList!.sort((a, b) => {
           if (a.year === b.year) {
