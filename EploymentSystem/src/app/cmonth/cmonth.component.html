@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="container card mt-5">
+      <div class="p-3" *ngIf="compesationExists">
+        <div class="d-flex justify-content-between">
+          <h4>{{ setMonth(compesationMonth) }} {{ compesationYear }}</h4>
+        </div>
+
+        <br />
+
+        <app-ctable [compesations]="compesations"></app-ctable>
+
+      </div>
+
+      <div class="p-3" *ngIf="!compesationExists">
+        <div align='center'>
+          <h4>Compesations not found</h4>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  

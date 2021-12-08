@@ -2,17 +2,17 @@ package com.ibm.entity;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
-public class Compensation {
+public class Compesation {
 
-	@Field(name = "compesationtype")
+	@Field(name = "compesation_type")
 	private String type;
-	@Field(name = "compesationamount")
+	@Field(name = "compesation_amount")
 	private double amount;
-	@Field(name = "compesationdescription")
+	@Field(name = "compesation_description")
 	private String description;
-	@Field(name = "compesationyear")
+	@Field(name = "compesation_year")
 	private int year;
-	@Field(name = "compesationmonth")
+	@Field(name = "compesation_month")
 	private int month;
 
 	public String getType() {

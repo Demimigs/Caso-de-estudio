@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.ibm.entity.Employee;
 
 @Repository
-public interface EmployRepository extends MongoRepository<Employee, String> {
+public interface EmploymentRepository extends MongoRepository<Employee, String> {
 
 	public List<Employee> findByFirstName(String firstName);
 	public List<Employee> findByLastName(String lastName);
@@ -20,4 +20,6 @@ public interface EmployRepository extends MongoRepository<Employee, String> {
 	public List<Employee> findByFirstNameAndLastNameAndPosition(String firstName, String lastName, String position);
 	
 	public List<Employee> findByFirstNameAndMiddleNameAndLastNameAndBirthDate(String firstName, String middleName, String lastName, String birthDate);
+
+	public Employee findByIdAndCompesationListMonthAndCompesationListYear(String id, int month, int year);
 }

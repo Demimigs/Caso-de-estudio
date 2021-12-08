@@ -26,6 +26,9 @@ export class compesationsComponent implements OnInit {
   displayCompesation: boolean = false;
   messageCompesation: boolean = false;
   displayCompesationEdit: boolean = false;
+  displayMonth: boolean = false;
+  displayRange: boolean = false;
+
   
   constructor(private http: HttpClient) {}
 
@@ -111,14 +114,33 @@ export class compesationsComponent implements OnInit {
     else this.displayCompesation = true;
   }
 
+  showSearchMonth() {
+    this.employeeID = this.employeeData.id;
+    if (this.displayMonth) this.displayMonth = false;
+    else this.displayMonth = true;
+    this.displayRange = false;
+    this.displayCompesation = false;
+    this.displayCompesationEdit = false;
+  }
+
+  showSearchRange() {
+    this.employeeID = this.employeeData.id;
+    if (this.displayRange) this.displayRange = false;
+    else this.displayRange = true;
+    this.displayMonth = false;
+    this.displayCompesation = false;
+    this.displayCompesationEdit = false;
+  }
+
+
   saveUserCompesation(data: Employee) {
     return this.http.post(
-      'http://localhost:8080/apis/update-employee-compensation',
+      'http://localhost:8080/apis/updateemployeecompesation',
       data
     );
   }
 
-  private fetchEmployee() {this.http.get(`http://localhost:8080/apis/get-employee/${this.employeeID}`).subscribe((employee) => {
+  private fetchEmployee() {this.http.get(`http://localhost:8080/apis/getemployee/${this.employeeID}`).subscribe((employee) => {
         this.employeeData = employee;
         this.employeeData.compesationList!.sort((a, b) => {
           if (a.year === b.year) {

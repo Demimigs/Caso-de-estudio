@@ -10,17 +10,17 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Employee {
 	@Id
 	private String id;
-	@Field(name = "firstname")
+	@Field(name = "first_name")
 	private String firstName;
-	@Field(name = "middlename")
+	@Field(name = "middle_name")
 	private String middleName;
-	@Field(name = "lastname")
+	@Field(name = "last_name")
 	private String lastName;
-	@Field(name = "birthdate")
+	@Field(name = "birth_date")
 	private String birthDate;
 	private String position;
-	@Field(name = "compesationlist")
-	private List<Compensation> compesationList;
+	@Field(name = "compesation_list")
+	private List<Compesation> compesationList;
 
 	public String getId() {
 		return id;
@@ -70,11 +70,11 @@ public class Employee {
 		this.position = position;
 	}
 
-	public List<Compensation> getCompesationList() {
+	public List<Compesation> getCompesationList() {
 		return compesationList;
 	}
 
-	public void setCompesationList(List<Compensation> compesationList) {
+	public void setCompesationList(List<Compesation> compesationList) {
 		this.compesationList = compesationList;
 	}
 

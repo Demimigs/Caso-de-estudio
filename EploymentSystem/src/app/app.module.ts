@@ -12,6 +12,11 @@ import { HomeComponent } from './home/home.component';
 import { compesationsComponent } from './compesations/compesations.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { UpdateComponent } from './update/update.component';
+import { SearchrangeComponent } from './searchrange/searchrange.component';
+import { SearchmonthComponent } from './searchmonth/searchmonth.component';
+import { CtableComponent } from './ctable/ctable.component';
+import { CmonthComponent } from './cmonth/cmonth.component';
+import { CrangeComponent } from './crange/crange.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { UpdateComponent } from './update/update.component';
     compesationsComponent,
     ViewEmployeeComponent,
     UpdateComponent,
+    SearchrangeComponent,
+    SearchmonthComponent,
+    CtableComponent,
+    CmonthComponent,
+    CrangeComponent,
 
   ],
   imports: [

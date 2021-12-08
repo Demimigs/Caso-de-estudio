@@ -23,7 +23,7 @@ export class UpdateComponent implements OnInit {
 
 private fetchEmployee() {
     this.http
-      .get(`http://localhost:8080/apis/get-employee/${this.employeeID}`)
+      .get(`http://localhost:8080/apis/getemployee/${this.employeeID}`)
       .subscribe((employee) => {
         this.employeeData = employee;
         this.employeeData.compesationList!.sort((a, b) => {
@@ -78,6 +78,6 @@ private fetchEmployee() {
 
 
   saveUser(data: Employee) {
-    return this.http.post('http://localhost:8080/apis/update-employee', data);
+    return this.http.post('http://localhost:8080/apis/updateemployee', data);
   }
 }

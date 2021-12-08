@@ -50,7 +50,7 @@ export class AddEmploymentComponent implements OnInit {
   }
 
   saveUser(data: any) {
-    return this.http.post('http://localhost:8080/apis/create-employee', data);
+    return this.http.post('http://localhost:8080/apis/createemployee', data);
   }
 
   ngOnInit(): void {

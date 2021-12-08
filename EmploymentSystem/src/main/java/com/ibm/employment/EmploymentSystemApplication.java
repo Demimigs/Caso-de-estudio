@@ -11,10 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 @EnableMongoRepositories("com.ibm.repository")
 @ComponentScan("com.ibm.*")
-public class EmploySystemApp {
+public class EmploymentSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmploySystemApp.class, args);
+		SpringApplication.run(EmploymentSystemApplication.class, args);
 	}
 	
 	@Bean

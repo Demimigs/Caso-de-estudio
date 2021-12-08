@@ -1,0 +1,33 @@
+<div>
+    <table class="table table-light">
+
+      <thead class="bg-dark">
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Month</th>
+          <th scope="col">Year</th>
+          <th scope="col">Description</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let compesation of compesations">
+          <th>{{ compesation.type }}</th>
+          <th>{{ setMonth(compesation.month) }}</th>
+          <td>{{ compesation.year }}</td>
+          <td>{{ compesation.description }}</td>
+          <td>$ {{ compesation.amount }}</td>
+          {{
+            sumCompesation(compesation.amount!)
+          }}
+        </tr>
+      </tbody>
+
+    </table>
+
+    <div align='center'>
+      <h4 class="me-5">Total: ${{ compesationTotal }}</h4>
+    </div>
+  </div>
+  
